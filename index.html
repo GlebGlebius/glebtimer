@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таймер</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #timer {
+            color: white;
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="timer">Загрузка...</div>
+
+<script>
+    // ⚠️ ЕСЛИ НУЖЕН ДРУГОЙ ГОД — ИЗМЕНИ ЗДЕСЬ
+    const targetDate = new Date("January 25, 2026 16:23:00").getTime();
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            timerElement.innerHTML = "Глеб уже едет :3";
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        timerElement.innerHTML =
+            `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
