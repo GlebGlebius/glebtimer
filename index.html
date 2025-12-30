@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>...</title>
+    <title>Таймеры</title>
     <style>
         html, body {
             margin: 0;
@@ -14,7 +14,20 @@
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
-       
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .timer {
+            color: black;
+            font-size: 80px;
+            text-align: center;
+        }
 
         img {
             max-width: 400px;
@@ -25,11 +38,48 @@
 <body>
 
 <div class="container">
+    <div id="timer1" class="timer">Загрузка...</div>
 
     <img src="image.png" alt="Картинка">
 
+    <div id="timer2" class="timer">Загрузка...</div>
 </div>
 
+<script>
+    const timer1Date = new Date("January 25, 2026 16:23:00").getTime();
+    const timer2Date = new Date("January 26, 2026 05:00:00").getTime();
+
+    const timer1El = document.getElementById("timer1");
+    const timer2El = document.getElementById("timer2");
+
+    function formatTime(diff) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        return `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+    }
+
+    function updateTimers() {
+        const now = new Date().getTime();
+
+        const diff1 = timer1Date - now;
+        if (diff1 <= 0) {
+            timer1El.innerHTML = "Глеб уже поехал :3";
+        } else {
+            timer1El.innerHTML = formatTime(diff1);
+        }
+
+        const diff2 = timer2Date - now;
+        if (diff2 <= 0) {
+            timer2El.innerHTML = "Глеб приехал :3";
+        } else {
+            timer2El.innerHTML = formatTime(diff2);
+        }
+    }
+
+    updateTimers();
+    setInterval(updateTimers, 1000);
 </script>
 
 </body>
