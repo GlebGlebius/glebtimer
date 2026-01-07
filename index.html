@@ -40,7 +40,7 @@
 <div class="container">
     <div id="timer1" class="timer">Загрузка...</div>
 
-    <img src="boykisser.png" alt="Картинка">
+    <img id="randomImage" alt="Картинка">
 
     <div id="timer2" class="timer">Загрузка...</div>
 </div>
@@ -59,6 +59,26 @@
         const seconds = Math.floor((diff / 1000) % 60);
         return `${days}д ${hours}ч ${minutes}м ${seconds}с`;
     }
+    const images = [
+        "boykisser.png",
+        "1.webp",
+        "2.webp",
+        "3.webp",
+        "4.webp",
+        "5.webp",
+        "6.webp",
+        "7.webp",
+        "8.webp",
+        "9.webp",
+        "10.webp",
+        "11.webp",
+        "12.webp"
+    ];
+
+    const randomImage =
+        images[Math.floor(Math.random() * images.length)];
+
+    document.getElementById("randomImage").src = randomImage;
 
     function updateTimers() {
         const now = new Date().getTime();
