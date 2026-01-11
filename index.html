@@ -46,8 +46,8 @@
 </div>
 
 <script>
-    const timer1Date = new Date("January 25, 2026 16:23:00").getTime();
-    const timer2Date = new Date("January 26, 2026 05:00:00").getTime();
+    const timer1Date = new Date("July 1, 2026 00:00:00").getTime();
+    const timer2Date = new Date("July 1, 2026 00:00:00").getTime();
 
     const timer1El = document.getElementById("timer1");
     const timer2El = document.getElementById("timer2");
@@ -85,14 +85,14 @@
 
         const diff1 = timer1Date - now;
         if (diff1 <= 0) {
-            timer1El.innerHTML = "Глеб уже поехал :3";
+            timer1El.innerHTML = "Пришло время планировать путешествие :3";
         } else {
             timer1El.innerHTML = formatTime(diff1);
         }
 
         const diff2 = timer2Date - now;
         if (diff2 <= 0) {
-            timer2El.innerHTML = "Глеб приехал :3";
+            timer2El.innerHTML = "Пришло время планировать путешествие :3";
         } else {
             timer2El.innerHTML = formatTime(diff2);
         }
