@@ -42,7 +42,7 @@
 
     <img id="randomImage" alt="Картинка">
 
-    <div id="timer2" class="timer">Загрузка...</div>
+    <div id="timer1" class="timer">Загрузка...</div>
 </div>
 
 <script>
@@ -85,7 +85,7 @@
 
         const diff1 = timer1Date - now;
         if (diff1 <= 0) {
-            timer1El.innerHTML = "Пришло время планировать путешествие :3";
+            timer1El.innerHTML = "В Казань :3";
         } else {
             timer1El.innerHTML = formatTime(diff1);
         }
