@@ -46,8 +46,8 @@
 </div>
 
 <script>
-    const timer1Date = new Date("March 20, 2026 00:00:00").getTime();
-    const timer2Date = new Date("March 20, 9999 00:00:00").getTime(); //Поменять дату
+    const timer1Date = new Date("March 20, 2026 19:16:00").getTime();
+    const timer2Date = new Date("March 21, 2026 07:50:00").getTime();
 
     const timer1El = document.getElementById("timer1");
     const timer2El = document.getElementById("timer2");
@@ -91,8 +91,8 @@
         }
 
         const diff2 = timer2Date - now;
-        if (diff2 > 0) { //Поменять тут на <=
-            timer2El.innerHTML = "Загрузка...";
+        if (diff2 <= 0) {
+            timer2El.innerHTML = "Я приехал :3";
         } else {
             timer2El.innerHTML = formatTime(diff2);
         }
