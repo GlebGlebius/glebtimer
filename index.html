@@ -74,32 +74,40 @@
         "11.webp",
         "12.webp"
     ];
+    const sad_images = [
+        "image.png",
+        "sad1.png",
+        "sad2.png",
+        "sad3.png",
+        "sad4.png",
+        "sad5.gif",
+        ]
 
     const randomImage =
-        images[Math.floor(Math.random() * images.length)];
+        sad_images[Math.floor(Math.random() * sad_images.length)]; //sad
 
     document.getElementById("randomImage").src = randomImage;
 
-    function updateTimers() {
-        const now = new Date().getTime();
+    //function updateTimers() {
+        //const now = new Date().getTime();
 
-        const diff1 = timer1Date - now;
-        if (diff1 <= 0) {
-            timer1El.innerHTML = "В Казань :3";
-        } else {
-            timer1El.innerHTML = formatTime(diff1);
-        }
+        //const diff1 = timer1Date - now;
+        //if (diff1 <= 0) {
+        //    timer1El.innerHTML = "В Казань :3";
+        //} else {
+        //    timer1El.innerHTML = formatTime(diff1);
+        //}
 
-        const diff2 = timer2Date - now;
-        if (diff2 <= 0) {
-            timer2El.innerHTML = "Я приехал :3";
-        } else {
-            timer2El.innerHTML = formatTime(diff2);
-        }
-    }
+        //const diff2 = timer2Date - now;
+        //if (diff2 <= 0) {
+        //    timer2El.innerHTML = "Я приехал :3";
+        //} else {
+        //    timer2El.innerHTML = formatTime(diff2);
+        //}
+    //}
 
-    updateTimers();
-    setInterval(updateTimers, 1000);
+    //updateTimers();
+    //setInterval(updateTimers, 1000);
 </script>
 
 </body>
