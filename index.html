@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>...</title>
+    <title>Таймеры</title>
     <style>
         html, body {
             margin: 0;
@@ -38,16 +38,16 @@
 <body>
 
 <div class="container">
-    <div id="timer1" class="timer">...</div>
+    <div id="timer1" class="timer">Таймер</div>
 
     <img id="randomImage" alt="Картинка">
 
-    <div id="timer2" class="timer">...</div>
+    <div id="timer2" class="timer">Таймер</div>
 </div>
 
 <script>
-    const timer1Date = new Date("March 20, 2026 19:16:00").getTime();
-    const timer2Date = new Date("March 21, 2026 07:50:00").getTime();
+    const timer1Date = new Date("July 1, 2026 00:00:00").getTime();
+    const timer2Date = new Date("July 1, 2026 00:00:00").getTime();
 
     const timer1El = document.getElementById("timer1");
     const timer2El = document.getElementById("timer2");
@@ -84,30 +84,30 @@
         ]
 
     const randomImage =
-        sad_images[Math.floor(Math.random() * sad_images.length)]; //sad
+        sad_images[Math.floor(Math.random() * images.length)]; //sad
 
     document.getElementById("randomImage").src = randomImage;
 
-    //function updateTimers() {
-        //const now = new Date().getTime();
+    function updateTimers() {
+        const now = new Date().getTime();
 
-        //const diff1 = timer1Date - now;
-        //if (diff1 <= 0) {
-        //    timer1El.innerHTML = "В Казань :3";
-        //} else {
-        //    timer1El.innerHTML = formatTime(diff1);
-        //}
+        const diff1 = timer1Date - now;
+        if (diff1 <= 0) {
+            timer1El.innerHTML = "В Казань :3";
+        } else {
+            timer1El.innerHTML = formatTime(diff1);
+        }
 
-        //const diff2 = timer2Date - now;
-        //if (diff2 <= 0) {
-        //    timer2El.innerHTML = "Я приехал :3";
-        //} else {
-        //    timer2El.innerHTML = formatTime(diff2);
-        //}
-    //}
+        const diff2 = timer2Date - now;
+        if (diff2 <= 0) {
+            timer2El.innerHTML = "Я приехал :3";
+        } else {
+            timer2El.innerHTML = formatTime(diff2);
+        }
+    }
 
-    //updateTimers();
-    //setInterval(updateTimers, 1000);
+    updateTimers();
+    setInterval(updateTimers, 1000);
 </script>
 
 </body>
